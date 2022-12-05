@@ -4,15 +4,19 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML Form</title>
     <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
-    <form action="https://mate-academy-form-lesson.herokuapp.com/create-application"
-    method="post">
+    <form
+    action="https://mate-academy-form-lesson.herokuapp.com/create-application"
+    method="post"
+    >
+
       <fieldset class="fieldset">
 
         <legend>Personal information</legend>
@@ -23,6 +27,7 @@
           type="text"
           name="surname"
           required
+          autocomplete="off"
           >
         </label>
 
@@ -32,6 +37,7 @@
           type="text"
           name="first_name"
           required
+          autocomplete="off"
           >
         </label>
 
@@ -43,7 +49,6 @@
           name="age"
           value="12"
           required
-          pattern="\d+"
           min="1"
           max="100"
           >
@@ -108,7 +113,7 @@
             type="radio"
             name="cats"
             value="y"
-          >
+            >
             Yes
           </label>
 
@@ -123,7 +128,7 @@
         </div>
 
         <label class="form-field">
-          What is your favourite color?
+          What is your favorite color?
           <input
           type="color"
           name="color"
@@ -139,11 +144,18 @@
         </label>
 
         <label class="form-field">
-          What are your favourite brands of cars?
-          <input
-          type="text"
+          What are your favorite brand of cars?
+
+          <select
           name="cars"
+          required
+          multiple
           >
+            <option value="bwm">BMW</option>
+            <option value="audi">Audi</option>
+            <option value="lada">LADA</option>
+          </select>
+
         </label>
 
         <label class="form-field">
@@ -151,6 +163,9 @@
           <input
           type="range"
           name="rating"
+          min="1"
+          max="10"
+          value="1"
           >
         </label>
 
@@ -162,25 +177,25 @@
 
         <label class="form-field">
           Comments:
-          <input
-          type="text"
-          name="comments"
-          >
+
+          <textarea name="comments"autocomplete="off"></textarea>
         </label>
 
         <label class="form-field">
           Would you recommend us?
-          <input
-          type="text"
-          name="recommend"
-          >
+          <select name="recommend" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
         </label>
 
       </fieldset>
 
       <button type="submit">Submit</button>
     </form>
+
     <script type="text/javascript" src="./main.js"></script>
+
   </body>
 
 </html>
